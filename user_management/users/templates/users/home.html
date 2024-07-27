@@ -9,7 +9,12 @@
         </p>
         <hr class="my-4">
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button">Logout</a>
+            <!--
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button class="btn btn-primary btn-lg" type="submit">Log out</button>
+            </form>
+            -->
             <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Sign in</a>
         </p>
     </div>
