@@ -5,12 +5,17 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.decorators import login_required
 
 from .forms import RegisterForm, LoginForm
 
 # Create your views here.
 def home(request):
     return render(request, 'users/home.html')
+
+@login_required
+def profile(request):
+    return render(request, 'users/profile.html')
 
 class RegisterView(View):
     form_class = RegisterForm
