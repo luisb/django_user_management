@@ -9,13 +9,14 @@
         </p>
         <hr class="my-4">
         <p class="lead">
-            <!--
+            {% if user.is_authenticated %}
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button class="btn btn-primary btn-lg" type="submit">Log out</button>
             </form>
-            -->
+            {% else %}
             <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Sign in</a>
+            {% endif %}
         </p>
     </div>
 
